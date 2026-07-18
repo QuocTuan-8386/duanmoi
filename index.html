@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://nap-xu.orvantis.online/ -->
+<html lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nạp xu TikTok</title>
+    <meta name="user-authenticated" content="false">
+    <meta name="user-whitelist" content="false">
+    <meta name="csrf-token" content="29eefbdbe2eb810a2494ad530768aaa950125093c94e73ab746a20f13a70d59b">
+    <script>
+        window.__INITIAL_AUTH__ = null;
+    </script>
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="https://nap-xu.orvantis.online/public/images/tiktok/favicon.ico" type="image/x-icon" data-rh="true">
+    <link rel="stylesheet" href="./rc/all.min.css">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ececec;
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            margin-top: 60px;
+            margin-bottom: 120px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 767px) {
+            h1.main-title {
+                display: none !important;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            body {
+                background-color: #fff;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        .color-coin {
+            color: #f7a80f;
+            font-weight: 500;
+        }
+
+        .header-title {
+            white-space: nowrap;
+        }
+
+        .tiktok-coin {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23f7a80f'/%3E%3Cpath fill='%23fff' d='M13.8 5.2v8.2c-.7-.5-1.6-.8-2.5-.8-2.2 0-4 1.3-4 3s1.8 3 4 3 4-1.3 4-3V8.8l2.8-.7V6l-3.3.9V5.2z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            vertical-align: middle;
+            margin: 0px 1px;
+        }
+
+        .icon-user { width: 14px; height: 14px; }
+        .icon-amount { width: 16px; height: 16px; }
+        .icon-promotion { width: 16px; height: 16px; }
+        .icon-btn { width: 14px; height: 14px; margin: -2px -2px 0px 2px; }
+        .icon-response { width: 15px; height: 15px; margin: -2px -2px 0px 2px; }
+
+        @media screen and (min-width: 768px) {
+            .icon-user { width: 18px; height: 18px; }
+            .icon-amount { width: 24px; height: 24px; }
+            .icon-btn { width: 18px; height: 18px; }
+        }
+
+        .mb-1 { margin-bottom: 1px; }
+        .me-2 { margin-right: 2px; }
+
+        /* HEADER STYLES */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 52px;
+            padding: 0 15px;
+        }
+
+        .header-container>div { display: flex; align-items: center; }
+        .header-container .header-logo { flex: 1; justify-content: flex-start; }
+        .header-container .header-center { flex: 1; justify-content: center; }
+        .header-container .header-menu { flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+        .header-container .header-center .header-title { font-size: 18px; }
+        .header-container .header-logo img { display: none; }
+        .header-container .header-center { font-weight: 700; }
+        .header-container .header-menu img { width: 24px; cursor: pointer; }
+
+        .header-actions { display: none !important; }
+
+        .search-container {
+            display: none;
+            position: relative;
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .search-box {
+            width: 100%; height: 44px;
+            padding: 0 50px 0 16px;
+            border: 1.5px solid rgba(43, 44, 53, 0.12);
+            border-radius: 22px;
+            background: rgba(73, 74, 82, 0.06);
+            font-size: 16px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .search-box:focus { border-color: rgba(22, 24, 35, 0.2); background: #fff; }
+        .search-box::placeholder { color: rgba(22, 24, 35, 0.5); }
+
+        .search-btn {
+            position: absolute; right: 0; top: 0;
+            width: 52px; height: 44px;
+            border: none; background: none;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            border-left: 1px solid rgba(22, 24, 35, 0.12);
+        }
+        .search-btn img { width: 20px; height: 20px; }
+
+        .header-icons { display: flex; align-items: center; gap: 16px; }
+        .header-icon {
+            position: relative; cursor: pointer;
+            width: 28px; height: 28px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .header-icon img { width: 24px; height: 24px; }
+        .header-avatar { position: relative; cursor: pointer; }
+        .header-avatar img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+        .header-avatar img[src*="three-dots"] { width: 20px; height: 20px; border-radius: 0; }
+
+        .dropdown-menu {
+            position: absolute; top: 100%; right: 0; margin-top: 8px;
+            width: 300px; background: #fff; border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(22, 24, 35, 0.12);
+            opacity: 0; visibility: hidden;
+            transform: translateY(-10px); transition: all 0.2s ease;
+            z-index: 1000; padding: 10px 0px;
+        }
+
+        .header-avatar:hover .dropdown-menu,
+        .header-avatar.active .dropdown-menu {
+            opacity: 1; visibility: visible; transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 16px; color: #161823; font-size: 16px;
+        }
+        .dropdown-item:hover { background: rgba(22, 24, 35, 0.03); }
+        .dropdown-item img { width: 20px; height: 20px; }
+
+        @media screen and (min-width: 768px) {
+            header {
+                box-shadow: none; background-color: #fff;
+                border-bottom: 1px solid #eeeeee; position: static;
+            }
+            .header-container { height: 60px; }
+            .header-container .header-logo img { display: block; width: 118px; height: auto; }
+            .header-container .header-center .header-title { display: none; }
+            .header-container .header-menu { display: none; }
+            .header-container .header-actions { display: flex !important; justify-content: flex-end; flex: 1; }
+            .search-container { display: block; }
+        }
+
+        /* MAIN CONTENT STYLES */
+        main { padding: 0 8px; }
+        .content { background-color: #fff; border-radius: 8px; padding: 8px; }
+        h1.main-title {
+            display: block; font-size: 15px; font-weight: 600;
+            margin: 10px 0 6px; line-height: 1.35; color: #161823;
+        }
+
+        .discount-section {
+            display: flex; align-items: center; gap: 8px;
+            margin: 16px auto; max-width: 960px; padding: 0 8px; font-size: 14px;
+        }
+        .discount-label { font-weight: 600; color: #161823; display: none; }
+        .discount-text { color: #fe2c55; }
+        .discount-icon { display: none; align-items: center; }
+        .discount-icon img { width: 16px; height: 16px; }
+
+        @media screen and (min-width: 768px) {
+            main { background-color: #fff; max-width: 1000px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 20px auto; padding: 30px; }
+            .content { padding: 0; }
+            h1.main-title { font-size: 24px; }
+            .discount-section { margin: 24px 0; padding: 0; max-width: none; font-size: 16px; }
+            .discount-label, .discount-icon { display: block; }
+        }
+
+        /* USER SECTION */
+        .user { background-color: #fff; border-radius: 8px; margin: 8px auto; max-width: 960px; padding: 0 8px 12px 8px; }
+        .security-payment {
+            position: relative; margin: 0px auto; padding: 0 15px;
+            background-image: url('/public/images/tiktok/svg/security-bg.svg');
+            background-repeat: no-repeat; background-size: 100%; background-position: center;
+            width: 160px; height: 16px; display: flex; align-items: center; justify-content: center; z-index: 10;
+        }
+        .security-content { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; }
+        .security-content .text { font-size: 10px; font-weight: 600; color: #01906e; }
+        .security-content img { width: 10px; height: 10px; }
+
+        .user-info { display: flex; align-items: center; justify-content: space-between; padding: 10px 10px; }
+        .user-details { display: flex; align-items: center; gap: 12px; width: 100%; flex-wrap: wrap; }
+        .user-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1px solid rgb(192, 192, 192); }
+        .user-text { display: flex; flex-direction: column; gap: 2px; }
+        .username { font-size: 16px; font-weight: 500; color: #161823; }
+        .fullname { font-size: 16px; font-weight: 400; color: #161823; }
+        .dropdown-arrow { width: 20px; height: 20px; transition: transform 0.2s ease; }
+
+        .tiktok-search-box { width: 100%; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+        .tiktok-search-box input { width: 100%; height: 40px; padding: 0 12px; border: 1px solid #e1e5e9; border-radius: 6px; font-size: 14px; outline: none; }
+        .tiktok-search-box input:focus { border-color: #fe2c55; }
+        .tiktok-search-box button { background-color: #fe2c55; color: white; border: none; height: 40px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; }
+        .search-status { font-size: 13px; color: #fe2c55; margin-top: 2px; }
+
+        @media screen and (min-width: 768px) {
+            .user { background-color: #f0f0f0; border-radius: 5px; margin: 16px 0; padding: 20px; width: fit-content; min-width: 350px; }
+            .security-payment { display: none; }
+            .user-info { padding: 0; }
+            .dropdown-arrow { display: none; }
+            .username, .fullname { font-size: 20px; }
+        }
+
+        /* PACKAGES GRID */
+        .coin-packages { max-width: 960px; margin: 0 auto; padding: 0 8px; }
+        .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+        .package-card {
+            background: #fff; border: 1px solid #e1e5e9; border-radius: 12px;
+            padding: 12px 8px; text-align: center; cursor: pointer;
+            min-height: 60px; display: flex; flex-direction: column; justify-content: center;
+        }
+        .package-card:hover, .package-card.active { border-color: #fe2c55; background: #fffcfc; box-shadow: 0 2px 8px rgba(255, 215, 0, 0.15); }
+        .coin-amount { font-size: 18px; font-weight: 700; color: #000; margin-bottom: 2px; display: flex; align-items: center; justify-content: center; gap: 4px; }
+        .coin-amount img { width: 16px; height: 16px; }
+        .coin-value { font-size: 12px; color: #666; }
+
+        @media screen and (min-width: 768px) {
+            .coin-packages { padding: 0; }
+            .packages-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+            .package-card { padding: 20px 16px; min-height: 110px; border: 2px solid #e1e5e9; }
+            .coin-amount { font-size: 28px; }
+            .coin-amount img { width: 20px; height: 20px; }
+            .coin-value { font-size: 16px; }
+        }
+
+        /* PAYMENT METHODS & BOTTOM ACTION BAR */
+        .payment-section {
+            max-width: 960px; position: fixed; bottom: 0; left: 0; right: 0;
+            background-color: #fff; z-index: 999; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 10px 0px 10px; margin: 0;
+        }
+        .payment-methods { margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .payment-title { display: none; font-size: 16px; font-weight: 600; color: #161823; margin: 0; }
+        .payment-icons { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+        .payment-icons img { height: 18px; border: 1px solid #eeeeee; padding: 2px 4px; }
+        .payment-button-container { display: flex; justify-content: center; margin-bottom: 10px; }
+        .payment-button {
+            background-color: #fe2c55; border: none; border-radius: 5px; padding: 12px;
+            color: white; font-size: 16px; font-weight: 600; cursor: pointer;
+            display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center;
+        }
+
+        @media screen and (min-width: 768px) {
+            .payment-section { padding: 0; margin-top: 32px; position: static; box-shadow: none; max-width: 960px; margin: 32px auto 0; }
+            .payment-methods { justify-content: flex-start; margin-bottom: 30px; }
+            .payment-title { display: block; }
+            .payment-icons { gap: 12px; }
+            .payment-button { padding: 14px 40px; font-size: 18px; width: auto; min-width: 250px; }
+        }
+
+        /* POPUPS BASICS */
+        .process-popup, .payment-popup {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 10000; display: none;
+        }
+        .process-popup.active, .payment-popup.active {
+            display: flex; align-items: center; justify-content: center;
+            padding: 12px; box-sizing: border-box;
+        }
+
+        /* Ensure any modal/dialog-like elements are centered on all devices */
+        .process-popup .popup-content,
+        .payment-popup .popup-content,
+        .modal,
+        .dialog,
+        [role="dialog"] {
+            position: relative !important;
+            margin: 0 auto !important;
+            align-self: center !important;
+            left: auto !important;
+            top: auto !important;
+            transform: none !important;
+        }
+
+        /* Reduce spacing between payment text and icon specifically inside payment popup */
+        .payment-popup .payment-row {
+            gap: 6px !important;
+        }
+        .payment-popup .row-left {
+            gap: 6px !important;
+        }
+        .popup-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); }
+        
+        .popup-content {
+            position: relative;
+            background: white;
+            border-radius: 24px;
+            width: clamp(320px, 96vw, 720px);
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.16);
+            padding: 0;
+            max-height: calc(100vh - 56px);
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex; flex-direction: column;
+        }
+
+        .popup-body {
+            padding: 24px 14px 28px;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            max-height: calc(100vh - 140px);
+        }
+
+        @media screen and (max-width: 576px) {
+            /* Mobile: auto-size with small margins so content looks like "Tùy chỉnh" modal */
+            .process-popup.active, .payment-popup.active {
+                padding: 8px; box-sizing: border-box;
+            }
+            .popup-content {
+                border-radius: 12px;
+                max-height: 92vh;
+                width: calc(100vw - 24px);
+                margin: 0 auto;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            }
+            .popup-body {
+                padding: 18px 16px 22px;
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
+                max-height: calc(92vh - 120px);
+            }
+            .popup-header { padding: 16px 16px 12px; }
+            .popup-subtitle { padding: 0 16px 14px; }
+        }
+
+        /* Ensure popups are centered on tablets and phones (exclude desktop) */
+        @media screen and (max-width: 1023px) {
+            .process-popup.active, .payment-popup.active {
+                display: flex; align-items: center; justify-content: center;
+                padding-left: 16px; padding-right: 16px; box-sizing: border-box;
+            }
+            .popup-overlay { background: rgba(0,0,0,0.55); }
+            .popup-content {
+                position: relative !important;
+                margin: 0 auto !important;
+                align-self: center !important;
+                width: calc(100% - 32px) !important;
+                max-width: 720px;
+                max-height: 92vh;
+                border-radius: 16px;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            .popup-body {
+                padding: 18px 14px 22px;
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
+                max-height: calc(92vh - 120px);
+            }
+            .popup-header { padding: 16px 14px 12px; }
+        }
+
+        .popup-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eef2f5; padding: 24px 14px 18px; margin-bottom: 0; }
+        .popup-title { font-size: 22px; font-weight: 700; color: #121213; margin: 0; }
+        .popup-close { background: none; border: none; font-size: 28px; cursor: pointer; color: #495057; }
+        .popup-subtitle { padding: 0 14px 18px; color: #0f766e; font-size: 14px; line-height: 1.5; }
+
+        /* METHOD CONTAINER LIST INTERIOR */
+        .payment-summary {
+            background: #ffffff; border: 1px solid #eef2f5; border-radius: 22px;
+            padding: 20px; margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(16, 24, 40, 0.04);
+        }
+        .summary-title {
+            font-weight: 700; font-size: 20px; margin-bottom: 18px;
+        }
+        .summary-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 14px 0; font-size: 15px; color: #141416;
+            border-bottom: 1px solid #f3f5f8;
+        }
+        .summary-row:last-child { border-bottom: none; }
+        .summary-row span {
+            color: #637381;
+        }
+        .summary-row strong {
+            font-weight: 700;
+            color: #141416;
+        }
+        .summary-subtext {
+            font-size: 13px; color: #667085; margin-top: 10px;
+        }
+
+        .payment-list-section { margin-bottom: 22px; }
+        .section-title { font-weight:700; margin: 20px 2px 16px; font-size: 16px; }
+        .payment-row {
+            display:flex; align-items:center; justify-content:flex-start;
+            background:#fff; border:1px solid #eef2f5; border-radius:22px;
+            padding:18px 20px; gap:18px; margin-bottom:14px; cursor:pointer;
+            transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+            flex-wrap:nowrap;
+        }
+        .payment-row:hover { transform: translateY(-1px); }
+        .row-left { display:flex; align-items:center; gap:18px; min-width: 0; flex: 1 1 auto; }
+        .row-icon { width:54px; height:54px; border-radius:18px; display:flex; align-items:center; justify-content:center; background:#f8fafc; box-shadow:0 8px 22px rgba(16,24,40,0.06); flex-shrink:0; margin-left:auto; }
+        .row-icon img { width:36px; height:36px; object-fit:contain; display:block; }
+        /* Fluid typography for labels and descriptions to fit all devices */
+        .row-label {
+            font-weight: 700;
+            color: #141416;
+            font-size: clamp(15px, 1.8vw, 18px);
+            line-height: 1.15;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-right: 8px;
+        }
+        .row-sub {
+            font-size: clamp(12px, 1.6vw, 14px);
+            color: #667085;
+            line-height: 1.4;
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            min-width: 0;
+            display: block;
+        }
+        .row-left > div { flex: 1 1 auto; min-width: 0; }
+        .payment-row .row-radio { flex: 0 0 auto; }
+        .row-radio { margin-left:0; margin-right:8px; width:18px; height:18px; display:flex; align-items:center; justify-content:center; }
+        .row-radio input { width: 18px; height: 18px; accent-color: #fe2c55; }
+        .payment-row.active { border-color: #fe2c55; box-shadow: 0 18px 44px rgba(254,44,85,0.12); }
+
+        /* Bank tile style (used for both modal bank list and main bank icons) */
+        .bank-grid {
+            display:grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .bank-tile, .bank-btn, .bank-icon-btn {
+            display:flex; align-items:center; justify-content:center;
+            width:100%; height:72px; padding:0 14px;
+            border-radius:18px; border:1px solid #eef2f5; background: #fff;
+            box-shadow: 0 10px 24px rgba(16,24,40,0.04);
+            cursor: pointer; font-size:14px; color:#141416; position:relative;
+            transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+        }
+
+        .bank-btn img, .bank-icon-btn img {
+            max-height:40px; max-width:100%; width:auto; height:auto; object-fit:contain; display:block;
+        }
+
+        @media screen and (max-width: 640px) {
+            .bank-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .payment-row { padding: 16px 18px; gap: 14px; }
+            .row-left { gap: 14px; }
+            .row-icon { width:50px; height:50px; }
+        }
+        .bank-btn.large img { max-height:44px; }
+        .bank-btn.xlarge img { max-height:54px; }
+
+        .bank-tile:hover, .bank-btn:hover, .bank-icon-btn:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(0,0,0,0.08); }
+        .bank-btn.selected, .bank-icon-btn.active, .bank-tile.selected {
+            border-color:#fe2c55; box-shadow:0 12px 30px rgba(254,44,85,0.08);
+        }
+
+        @media screen and (max-width: 640px) {
+            .header-container {
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                height: auto;
+                padding: 12px 14px;
+            }
+            .header-menu {
+                width: 100%; justify-content: flex-start; gap: 12px;
+            }
+            .header-center {
+                width: 100%; justify-content: space-between;
+            }
+            .user-info {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .user-details { gap: 10px; }
+            .tiktok-search-box { width: 100%; }
+            .packages-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+            }
+            .package-card {
+                padding: 14px 10px; min-height: 86px; border-radius: 12px;
+                display:flex; flex-direction:column; align-items:center; justify-content:center;
+                background:#fff; border:1px solid #f1f3f5; box-shadow: none; text-align:center;
+            }
+            .package-card .coin-amount { font-size:18px; font-weight:700; color:#f7a80f; display:flex; align-items:center; gap:6px; }
+            .package-card .coin-amount .tiktok-coin { width:20px; height:20px; }
+            .package-card .coin-value { font-size:13px; color:#777; margin-top:6px; }
+            .package-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+            .package-card.active { border:2px solid #fe2c55; box-shadow: 0 10px 30px rgba(254,44,85,0.08); background:#fff; }
+            .payment-button { font-size: 15px; padding: 12px; }
+            .payment-section { padding: 8px 8px 10px; }
+            .payment-row { padding: 14px 16px; gap: 12px; flex-wrap: wrap; }
+            .row-left { gap: 12px; }
+            .row-icon { width: 50px; height: 50px; }
+            .row-icon img { width: 24px; height: 24px; }
+            .row-label { font-size: 14px; }
+            .row-sub { font-size: 13px; max-width: 100%; }
+            .popup-content {
+                width: calc(100% - 16px); max-width: 95%; padding: 0; top: auto; bottom: 0;
+                transform: translateX(-50%); border-radius: 24px 24px 0 0;
+                max-height: 90vh;
+            }
+            .popup-header {
+                padding: 18px 14px 14px; flex-direction: column; align-items: flex-start; gap: 10px;
+            }
+            .popup-body { padding: 18px 14px 22px; }
+            .popup-title { font-size: 20px; }
+            .popup-subtitle { padding: 0 0 16px; font-size: 13px; }
+            .payment-summary { padding: 20px; }
+            .summary-row { padding: 12px 0; font-size: 14px; }
+            .summary-title { font-size: 18px; }
+            .momo-content { grid-template-columns: 1fr; gap: 18px; }
+            .momo-summary-card, .momo-qr-card { padding: 18px 16px; }
+            .momo-header { padding: 14px 16px; }
+            .momo-brand { gap: 10px; font-size: 15px; }
+            .momo-expiry-card { padding: 16px; }
+            .momo-qr-wrapper { min-height: auto; padding: 16px; }
+            .momo-qr { width: 100%; max-width: 220px; height: auto; }
+            #btn-qr-finish { width: 100%; max-width: 260px; }
+            #btn-close-result { width: 100%; max-width: 260px; }
+            main { padding-bottom: 150px; }
+            .user { max-width: 100%; width: 100%; padding: 0 10px 12px; }
+            .security-payment { width: 100%; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header-container { padding: 12px 12px 10px; gap: 10px; }
+            .header-center { width: 100%; }
+            .search-container { width: 100%; }
+            .search-box { font-size: 14px; height: 40px; }
+            .payment-section { padding: 10px 10px 16px; }
+            .packages-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+            .package-card { min-height: 86px; padding: 14px 10px; border-radius:12px; }
+            .payment-button { font-size: 14px; padding: 12px; }
+            /* Keep payment rows on a single line and prevent icon from dropping */
+            .payment-row { flex-direction: row; align-items: center; padding: 12px 14px; flex-wrap: nowrap; }
+            .row-left { width: auto; gap: 10px; flex: 1 1 auto; min-width: 0; display: flex; align-items: center; }
+            .row-radio { margin-left: 0; }
+            .row-sub { max-width: calc(100% - 90px); overflow-wrap: anywhere; word-break: break-word; }
+            .row-icon { margin-left: 12px; flex-shrink: 0; }
+            .popup-content { width: 100%; max-width: 100%; border-radius: 24px 24px 0 0; min-height: 0; }
+            .popup-header { padding: 16px 14px 12px; }
+            .popup-body { padding: 16px 14px 20px; }
+            .popup-title { font-size: 19px; }
+            .popup-subtitle { padding: 0 0 16px; font-size: 13px; }
+            .payment-summary { padding: 18px; }
+            .summary-row { font-size: 13px; }
+            .momo-content { grid-template-columns: 1fr; padding: 16px; }
+            .momo-summary-card, .momo-qr-card { padding: 16px; }
+            .momo-header { padding: 14px 16px; }
+            .momo-qr { width: 100%; max-width: 100%; height: auto; }
+            .momo-qr-wrapper { padding: 16px; min-height: auto; }
+            #btn-qr-finish, #btn-close-result { width: 100%; max-width: 100%; }
+            main { padding-bottom: 180px; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .popup-content {
+                width: calc(100% - 24px);
+                max-width: calc(100% - 24px);
+                left: 50%;
+                top: 12px;
+                bottom: 12px;
+                transform: translateX(-50%);
+                border-radius: 24px;
+                max-height: calc(100vh - 24px);
+                padding: 0;
+            }
+            .popup-header { padding: 14px 14px 12px; }
+            .popup-body { padding: 14px 14px 18px; }
+            .popup-title { font-size: 18px; }
+            .momo-header {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 10px;
+            }
+            .momo-brand { width: 100%; }
+            .momo-content {
+                grid-template-columns: 1fr !important;
+                gap: 16px;
+                padding: 12px;
+            }
+            .momo-summary-card,
+            .momo-qr-card {
+                padding: 16px !important;
+                width: 100%;
+            }
+            .momo-qr-wrapper {
+                min-height: auto !important;
+                padding: 16px !important;
+            }
+            .momo-qr { width: 100% !important; max-width: 100% !important; height: auto !important; }
+            .momo-qr-text,
+            .momo-qr-help { font-size: 13px; text-align: left; }
+            .summary-item { flex-wrap: wrap; justify-content: space-between; }
+            .summary-item span,
+            .summary-item strong { width: 100%; }
+            #btn-qr-finish,
+            #btn-close-result { width: 100%; margin: 14px 0 20px; }
+        }
+
+        /* CUSTOM SCREEN RESPONSIVE STYLES */
+        #custom-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 10001;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #custom-screen header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-shrink: 0;
+        }
+
+        #custom-screen main {
+            flex: 1;
+            overflow-y: auto;
+            padding-bottom: 100px;
+        }
+
+        #custom-screen button {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #custom-screen button:active {
+            transform: scale(0.98);
+        }
+
+        @media screen and (max-width: 480px) {
+            #custom-screen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #custom-screen header {
+                flex-shrink: 0;
+            }
+
+            #custom-screen main {
+                flex: 1;
+                overflow-y: auto;
+                padding: 12px 12px 100px;
+            }
+
+            #custom-screen .kp {
+                padding: 16px;
+                font-size: 18px;
+                border-radius: 8px;
+            }
+
+            #custom-screen #keypad {
+                gap: 8px;
+                margin-top: 14px;
+            }
+        }
+
+        /* Finish button inside QR modal */
+        .finish-btn { background-color: #009b40; border: none; color: #fff; }
+        .finish-btn:hover { filter: brightness(0.95); }
+
+        /* QR AREA & SPINNER */
+        .qr-container { text-align: center; padding: 15px 0; }
+        .qr-image { width: 180px; height: 180px; margin: 10px auto; border: 1px solid #ddd; padding: 5px; display: block; }
+        .qr-details { background: #f8f9fa; padding: 10px; border-radius: 6px; text-align: left; font-size: 14px; }
+        .qr-row { display: flex; justify-content: space-between; margin-bottom: 6px; }
+        .qr-timer { color: #fe2c55; font-weight: bold; }
+
+        .momo-portal { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 32px rgba(0,0,0,0.08); }
+        .momo-header { background: #fb2d6d; color: #fff; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; }
+        .momo-portal.zalopay .momo-header { background: #ffffff; color: #141416; }
+        .momo-portal.zalopay .momo-brand span { color: #141416; }
+        .momo-brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 16px; }
+        .momo-logo { width: 40px; height: 40px; border-radius: 12px; object-fit: cover; }
+        .momo-content { display: grid; grid-template-columns: minmax(0, 1fr) 1.2fr; gap: 18px; padding: 20px; align-items: start; }
+        .momo-summary-wrapper { display: grid; gap: 14px; }
+        .momo-summary-card, .momo-qr-card { background: #fff; border-radius: 18px; padding: 24px 20px; }
+        .summary-title { font-size: 18px; font-weight: 700; margin-bottom: 14px; }
+        .summary-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f3f3f5; font-size: 14px; }
+        .summary-item:last-child { border-bottom: none; }
+        .summary-item span { color: #555; }
+        .summary-item strong { color: #161823; }
+        .momo-expiry { margin-top: 10px; font-size: 14px; color: #fe2c55; font-weight: 700; }
+        .momo-expiry-card { background: #fff0f4; border-radius: 20px; padding: 18px 18px; text-align: center; color: #fe2c55; font-weight: 700; }
+        .momo-expiry-card strong { display: block; margin-top: 10px; font-size: 24px; line-height: 1.1; }
+        .momo-qr-wrapper { background: #fff0f4; border-radius: 24px; padding: 22px; display: flex; align-items: center; justify-content: center; min-height: 220px; }
+        .momo-qr { max-width: 100%; width: 260px; height: auto; object-fit: contain; }
+        .momo-qr-text { margin-top: 16px; font-size: 14px; color: #3d3d3d; text-align: center; }
+        .momo-qr-help { margin-top: 12px; font-size: 13px; text-align: center; color: #666; }
+        #btn-qr-finish { margin: 16px auto 20px; }
+        .momo-qr-help a { color: #fb2d6d; text-decoration: none; }
+
+        .loader {
+            width: 40px; height: 40px; border: 4px solid #f3f3f3;
+            border-top: 4px solid #fe2c55; border-radius: 50%;
+            animation: spin 1s linear infinite; margin: 20px auto;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* CARD INTEGRATION INPUTS */
+        .card-fields { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+        .card-fields input, .card-fields select {
+            width: 100%; height: 40px; padding: 0 10px;
+            border: 1px solid #e1e5e9; border-radius: 6px; outline: none;
+        }
+        .card-submit-btn {
+            background-color: #fe2c55; color: white; border: none;
+            height: 54px; border-radius: 16px; font-weight: 700; cursor: pointer; margin-top: 24px;
+            width: 100%; font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="./rc/logo.svg" alt="TikTok">
+            </div>
+            <div class="header-center">
+                <span class="header-title">Nạp xu TikTok</span>
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="Tìm kiếm">
+                    <button class="search-btn"><img src="./rc/search.svg" alt="Search"></button>
+                </div>
+            </div>
+            <div class="header-menu">
+                <img src="./rc/menu.svg" alt="Menu">
+                <img src="./rc/question.svg" alt="Help">
+            </div>
+            <div class="header-actions">
+                <div class="header-icons">
+                    <div class="header-avatar">
+                        <img src="./rc/three-dots.svg">
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item"><span>Công cụ nhà sáng tạo</span></a>
+                            <a href="#" class="dropdown-item"><span>Phản hồi và trợ giúp</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="main-title">Nạp xu TikTok - Trung tâm nạp xu TikTok</h1>
+
+        <div class="user" id="user-section">
+            <div class="security-payment">
+                <div class="security-content">
+                    <img src="./rc/security-tiktok.svg" alt="">
+                    <span class="text">Thanh toán bảo mật</span>
+                    <img src="./rc/arrow-right.svg" alt="">
+                </div>
+            </div>
+
+            <div class="user-info">
+                <div class="user-details">
+                    <img id="user-avatar-img" src="avatar-default.vng" alt="User Avatar" class="user-avatar" onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22%3E%3Crect width=%22120%22 height=%22120%22 rx=%2260%22 fill=%22%23eef1f4%22/%3E%3Ccircle cx=%2260%22 cy=%2246%22 r=%2220%22 fill=%22%23c8d0d9%22/%3E%3Cpath d=%22M24 102c6-21 22-32 36-32s30 11 36 32%22 fill=%22%23c8d0d9%22/%3E%3C/svg%3E';">
+                    <div class="user-text">
+                        <div>
+                            <span class="username" id="user-username-txt">Nhập ID Tiktok bạn muốn nạp </span>
+                            <span class="fullname" id="user-fullname-txt" style="display: block; font-size: 14px; color: #666;"></span>
+                        </div>
+                    </div>
+
+                    <div class="tiktok-search-box">
+                        <input type="text" id="tiktok-input" placeholder="Ví dụ: https://www.tiktok.com/@tiktok hoặc @tiktok" />
+                        <button type="button" id="btn-check">Kiểm tra tài khoản</button>
+                        <div id="status" class="search-status"></div>
+                    </div>
+                </div>
+                <img src="./rc/arrow-bottom.svg" alt="Dropdown" class="dropdown-arrow">
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="discount-section">
+                <span class="discount-label">Nạp:</span>
+                <span class="discount-text">Tiết kiệm khoảng 25% với phí dịch vụ của bên thứ ba thấp hơn.</span>
+                <div class="discount-icon"><img src="./rc/help.svg" alt="Help"></div>
+            </div>
+
+            <div class="coin-packages">
+                <div class="packages-grid" id="packages-list">
+                    <div class="package-card" data-amount="50000" data-coins="216">
+                        <div class="coin-amount"><img src="./icon/iconxu2.jpg" style="display: flex; align-items: center; gap: 8px; height: 22px; width: 22px;"> </img><span class="color-coin">216</span></div>
+                        <div class="coin-value">50,000 ₫</div>
+                    </div>
+                    <div class="package-card" data-amount="100000" data-coins="433">
+                        <div class="coin-amount"><img src="./icon/iconxu2.jpg" style="display: flex; align-items: center; gap: 8px; height: 22px; width: 22px;"> </img><span class="color-coin">433</span></div>
+                        <div class="coin-value">100,000 ₫</div>
+                    </div>
+                    <div class="package-card" data-amount="200000" data-coins="866">
+                        <div class="coin-amount"><img src="./icon/iconxu2.jpg" style="display: flex; align-items: center; gap: 8px; height: 22px; width: 22px;"> </img><span class="color-coin">866</span></div>
+                        <div class="coin-value">200,000 ₫</div>
+                    </div>
+                    <div class="package-card" data-amount="300000" data-coins="1299">
+                        <div class="coin-amount"><img src="./icon/iconxu2.jpg" style="display: flex; align-items: center; gap: 8px; height: 22px; width: 22px;"> </img><span class="color-coin">1,299</span></div>
+                        <div class="coin-value">300,000 ₫</div>
+                    </div>
+                    <div class="package-card" data-amount="500000" data-coins="2165">
+                        <div class="coin-amount"><img src="./icon/iconxu2.jpg" style="display: flex; align-items: center; gap: 8px; height: 22px; width: 22px;"> </img><span class="color-coin">2,165</span></div>
+                        <div class="coin-value">500,000 ₫</div>
+                    </div>
+                    <div class="package-card" data-amount="1000000" data-coins="4329">
+                        <div class="coin-amount"><img src="./icon/iconxu2.jpg" style="display: flex; align-items: center; gap: 8px; height: 22px; width: 22px;"> </img><span class="color-coin">4,329</span></div>
+                        <div class="coin-value">1,000,000 ₫</div>
+                    </div>
+                    <div class="package-card active" data-amount="2000000" data-coins="8658">
+                        <div class="coin-amount"><img src="./icon/iconxu2.jpg" style="display: flex; align-items: center; gap: 8px; height: 22px; width: 22px;"> </img><span class="color-coin">8,658</span></div>
+                        <div class="coin-value">2,000,000 ₫</div>
+                    </div>
+                    <div class="package-card custom-card" data-amount="custom" data-coins="custom" title="Tuỳ chỉnh">
+                        <div class="coin-amount"><img src="./icon/iconxu2.jpg" style="display: flex; align-items: center; gap: 8px; height: 22px; width: 22px;"> </img><span class="color-coin">Tuỳ chỉnh</span></div>
+                        <div class="coin-value">Nhập số tiền</div>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- CUSTOM TOP-UP SCREEN (hidden by default) -->
+                    <style>
+                        /* Bottom-sheet modal that mimics the screenshot and is responsive */
+                        #custom-screen { position:fixed; inset:0; background:rgba(0,0,0,0.32); z-index:10001; display:none; align-items:flex-end; justify-content:center; }
+                        #custom-screen .custom-modal { width:100%; max-width:720px; background:#fff; border-radius:14px 14px 0 0; box-shadow:0 -8px 32px rgba(0,0,0,0.18); max-height:88vh; display:flex; flex-direction:column; }
+                        /* header */
+                        #custom-screen .custom-modal .modal-header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid #eee; }
+                        #custom-screen .custom-modal .modal-title { font-weight:700; font-size:16px; text-align:center; flex:1; }
+                        #custom-screen .custom-modal .modal-icon-btn { background:none;border:none;font-size:20px;padding:6px; cursor:pointer; }
+
+                        /* body */
+                        #custom-screen .custom-modal .modal-body { padding:12px 14px 16px; overflow:auto; }
+                        .field-label { font-weight:700; margin-bottom:8px; }
+                        .input-box { border:1px solid #eee; border-radius:10px; padding:12px; display:flex; align-items:center; gap:10px; font-size:16px; }
+                        .input-box input { border:none; outline:none; width:100%; font-size:16px; }
+
+                        /* chips */
+                        .recent-chip { display:inline-block; margin-right:8px; margin-top:6px; padding:6px 10px; border-radius:18px; border:1px solid #eee; background:#fff; font-size:13px; cursor:pointer; }
+
+                        /* keypad grid */
+                        #keypad { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:12px; }
+                        .kp { background:#f5f5f5; border-radius:10px; height:64px; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:600; border:1px solid #eee; cursor:pointer; }
+                        .kp.special { background:#fff; }
+
+                        /* footer area inside modal */
+                        .modal-footer { padding:12px 14px; border-top:1px solid #f0f0f0; background:#fff; }
+                        .payment-icons { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+                        .total-row { display:flex; justify-content:space-between; align-items:center; margin-top:8px; font-weight:700; }
+                        /* default: inactive (grey) */
+                        #custom-pay-btn { width:100%; height:52px; border-radius:12px; border:1px solid #e8e8e8; background:#f2f2f2; color:#999; font-weight:700; font-size:16px; margin-top:12px; cursor:not-allowed; transition: all .2s ease; }
+                        #custom-pay-btn.active { background: linear-gradient(180deg,#ff9fa9,#ff6b7a); color:#fff; border-color:#ff6b7a; cursor:pointer; box-shadow:0 8px 18px rgba(254,44,85,.18); }
+                        #custom-pay-btn:not(:disabled):hover { filter: brightness(0.95); }
+
+                        /* responsive tweaks */
+                        @media (min-width:900px) {
+                            #custom-screen { align-items:center; }
+                            #custom-screen .custom-modal { width:480px; border-radius:12px; }
+                        }
+                    </style>
+
+                    <div id="custom-screen" style="display:none;">
+                        <div class="custom-modal">
+                            <div class="modal-header">
+                                <button id="custom-back" class="modal-icon-btn">‹</button>
+                                <div class="modal-title">Tuỳ chỉnh</div>
+                                <button id="custom-help" class="modal-icon-btn">?</button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                                    <img id="custom-avatar" src="./rc/avatar-default.svg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;"/>
+                                    <div style="flex:1">
+                                        <div id="custom-username" style="font-weight:700">@user</div>
+                                        <div style="font-size:13px;color:#666;margin-top:4px">Nhập số Xu hoặc dùng bàn phím</div>
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom:10px;">
+                                    <div class="field-label">Số lượng Xu</div>
+                                    <div class="input-box">
+                                        <span style="color:#f7a80f;font-weight:700;"></span>
+                                        <input id="coins-input" type="text" inputmode="numeric" autocomplete="off" placeholder="30 - 2,500,000" />
+                                    </div>
+                                </div>
+
+                                <div style="font-size:13px;color:#666;">Được chọn gần đây:
+                                    <div id="recent-chips" style="display:inline-block;margin-left:8px;">
+                                        <button class="recent-chip" data-coins="30">30</button>
+                                        <button class="recent-chip" data-coins="154">154</button>
+                                        <button class="recent-chip" data-coins="250">250</button>
+                                        <button class="recent-chip" data-coins="616">616</button>
+                                    </div>
+                                </div>
+
+                                <div id="keypad">
+                                    <div class="kp" data-key="1">1</div>
+                                    <div class="kp" data-key="2">2</div>
+                                    <div class="kp" data-key="3">3</div>
+                                    <div class="kp special" data-key="back">⌫</div>
+
+                                    <div class="kp" data-key="4">4</div>
+                                    <div class="kp" data-key="5">5</div>
+                                    <div class="kp" data-key="6">6</div>
+                                    <div class="kp special" data-key="000">000</div>
+
+                                    <div class="kp" data-key="7">7</div>
+                                    <div class="kp" data-key="8">8</div>
+                                    <div class="kp" data-key="9">9</div>
+                                    <div class="kp" data-key="0">0</div>
+                                </div>
+
+                                <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                                    <div style="font-size:13px;color:#666;">Quy đổi (ước tính)</div>
+                                    <div id="converted-xu" style="font-weight:700;">0 Xu</div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <!-- Payment icons removed for custom-entry modal -->
+
+                                <div class="total-row">
+                                    <div>Tổng</div>
+                                    <div id="custom-total">0 ₫</div>
+                                </div>
+
+                                <button id="custom-pay-btn">Nạp</button>
+                            </div>
+                        </div>
+                    </div>
+
+            <!-- CHỨC NĂNG BỔ SUNG: Thanh toán bar dưới cùng -->
+            <div class="payment-section">
+             
+                <div class="payment-button-container">
+                    <button class="payment-button" id="btn-trigger-payment">
+                        <span class="button-text">Thanh toán ngay</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CHỨC NĂNG BỔ SUNG: Popup chọn Phương thức thanh toán & Form nhập liệu -->
+    <div class="payment-popup" id="modal-payment-method">
+        <div class="popup-overlay"></div>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 class="popup-title">Tóm tắt đơn hàng</h3>
+                <button class="popup-close" id="close-payment-method">×</button>
+            </div>
+            <div class="popup-subtitle">Thông tin của bạn được giữ riêng tư và bảo mật.</div>
+            <div class="popup-body">
+                <div class="payment-summary">
+                    <div class="summary-title">Thông tin đơn hàng</div>
+                    <div class="summary-row">
+                        <span>Tài khoản</span>
+                        <strong id="summary-account">Nhập ID Tiktok</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tổng cộng</span>
+                        <strong id="summary-total">0 ₫</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Số xu</span>
+                        <strong id="summary-coins">0 Xu</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Ngân hàng/ví</span>
+                        <strong id="summary-bank">Chưa chọn</strong>
+                    </div>
+                </div>
+
+                <div class="payment-list-section">
+                    <div class="section-title" style="display:flex;align-items:center;justify-content:space-between;">
+                        <span>Phương thức thanh toán</span>
+                        <a href="#" id="view-other-methods" style="font-size:14px;color:#7b7b7b;text-decoration:none;">Xem các phương thức khác ›</a>
+                    </div>
+
+                    <div class="payment-row active" data-method="saved">
+                        <div class="row-left">
+                            <label class="row-radio"><input type="radio" name="pay_group" value="saved" checked></label>
+                            <div>
+                                <div class="row-label">MoMo</div>
+                                <div class="row-sub">****6785</div>
+                            </div>
+                        </div>
+                        <div class="row-icon"><img src="./icon/momo.jpg" alt="MoMo"></div>
+                    </div>
+                    <div class="payment-row" data-method="momo">
+                        <div class="row-left">
+                            <label class="row-radio"><input type="radio" name="pay_group" value="momo"></label>
+                            <div>
+                                <div class="row-label">MoMo</div>
+                                <div class="row-sub">Khi bạn tiếp tục, phương thức này sẽ được liên kết để giúp bạn thanh toán nhanh hơn.</div>
+                            </div>
+                        </div>
+                        <div class="row-icon"><img src="./icon/momo.jpg" alt="MoMo"></div>
+                    </div>
+                    <div class="payment-row" data-method="zalopay">
+                        <div class="row-left">
+                            <label class="row-radio"><input type="radio" name="pay_group" value="zalopay"></label>
+                            <div>
+                                <div class="row-label">ZaloPay</div>
+                                <div class="row-sub">Thanh toán nhanh qua ví ZaloPay, liên kết ngay khi chọn.</div>
+                            </div>
+                        </div>
+                        <div class="row-icon"><img src="./icon/zalopay.png" alt="ZaloPay"></div>
+                    </div>
+                </div>
+
+                <button class="card-submit-btn" id="btn-confirm-proceed">Thanh toán và liên kết</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHỨC NĂNG BỔ SUNG: Popup Tiến trình xử lý (Loader, QR Ngân hàng, Trạng thái) -->
+    <style>
+        /* Mobile: center the process/result modal as a compact card */
+        @media (max-width: 800px) {
+            #modal-process { display: none; }
+            #modal-process.active { display:flex; align-items:center; justify-content:center; }
+            #modal-process .popup-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.36); }
+            #modal-process .popup-content { position:absolute; width: calc(100% - 32px); max-width: 420px; margin-left: auto; margin-right: auto; left: 0; right: 0; max-height:86vh; border-radius:12px; box-shadow:0 12px 36px rgba(0,0,0,0.25); overflow:auto; padding:0; }
+            #modal-process .popup-header { border-bottom:none; }
+            #modal-process .popup-content > .popup-header h3 { margin-left:8px; }
+        }
+    </style>
+
+    <div class="process-popup" id="modal-process">
+        <div class="popup-overlay"></div>
+        <div class="popup-content" style="text-align: center;">
+            <div class="popup-header">
+                <h3 class="popup-title" id="process-title">Đang xử lý giao dịch</h3>
+                <!-- Top-right close removed: use centered close button below -->
+            </div>
+            
+            <!-- Trạng thái 1: Loading chuyển tiếp -->
+            <div id="state-loading">
+                <div class="loader"></div>
+                <p>Hệ thống đang khởi tạo cổng thanh toán bảo mật, vui lòng đợi trong giây lát...</p>
+            </div>
+
+            <!-- Trạng thái 2: Hiển thị cổng QR MoMo -->
+            <div id="state-qr" style="display: none;">
+                <div class="momo-portal">
+                    <div class="momo-header">
+                        <div class="momo-brand">
+                            <img id="payment-brand-icon" src="./icon/momo.jpg" alt="MoMo" class="momo-logo">
+                            <span id="payment-brand-name">Cổng thanh toán MoMo</span>
+                        </div>
+                    </div>
+                    <div class="momo-content">
+                        <div class="momo-summary-wrapper">
+                            <div class="momo-summary-card">
+                                <div class="summary-title">Thông tin đơn hàng</div>
+                                <div class="summary-item"><span>Nhà cung cấp</span><strong>TikTok</strong></div>
+                                <div class="summary-item"><span>Mã đơn hàng</span><strong id="momo-order-id">---</strong></div>
+                                <div class="summary-item"><span>Mô tả</span><strong>TikTok Coin Recharge</strong></div>
+                                <div class="summary-item"><span>Số tiền</span><strong id="momo-amount">0 ₫</strong></div>
+                            </div>
+                            <div class="momo-expiry-card">
+                                <div>Đơn hàng sẽ hết hạn sau</div>
+                                <strong id="momo-expiry">15:00</strong>
+                            </div>
+                        </div>
+                        <div class="momo-qr-card" style="padding: 28px 20px 20px 20px; text-align: center;">
+                            <div class="momo-qr-wrapper" style="background: #fff8fb; border: 1px dashed #f0b2c9; border-radius: 18px; padding: 24px 18px; min-height: 190px; display: flex; align-items: center; justify-content: center;">
+                                <div>
+                                    <img src="./icon/momo.jpg" alt="MoMo" style="width:42px;height:42px;border-radius:8px;margin-bottom:10px;object-fit:cover;" />
+                                    <div style="font-weight: 700; color: #141416; margin-bottom: 8px;">Xác nhận thanh toán trên ứng dụng MoMo</div>
+                                    <div style="font-size: 14px; color: #666; line-height: 1.5;">Mở ứng dụng MoMo, để hoàn tất giao dịch.</div>
+                                    <div style="font-size: 14px; color: #666; line-height: 1.5; margin-top: 8px;">Hoặc bấm nút xác nhận, hệ thống sẽ tự động cập nhật giao dịch.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:28px;">
+                    <button type="button" id="btn-qr-finish" class="card-submit-btn finish-btn" style="width:200px; height:48px; font-size: 16px;">Xác nhận thanh toán</button>
+                </div>
+            </div>
+
+            <!-- Trạng thái 3: Kết quả thành công / Lỗi -->
+            <div id="state-result" style="display: none; padding: 20px 0;">
+                <div id="result-check" style="text-align:center; margin-bottom:12px; display:none;">
+                    <!-- Green check circle -->
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#009b40"/>
+                        <path d="M17 8L10.5 14.5L7 11" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p id="result-text" style="font-size:16px; font-weight:600;"></p>
+                <div style="text-align:center; margin-top:14px;">
+                    <button type="button" id="btn-close-result" class="finish-btn" style="width:120px; padding:10px 12px; background-color: #ff4d4d; border-radius:6px;">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Xử lý Logic Javascript -->
+    <script>
+        // --- LOGIC TRÍCH XUẤT VÀ KIỂM TRA TÀI KHOẢN TIKTOK ---
+        let currentTargetUser = null; 
+
+        function extractUsername(input) {
+            let text = input.trim();
+            if (!text) return null;
+            if (text.includes('@')) {
+                let parts = text.split('@')[1];
+                return parts.split(/[/?]/)[0].trim();
+            }
+            return text.replace('/', '');
+        }
+
+        document.getElementById('btn-check').addEventListener('click', async function() {
+            const rawInput = document.getElementById('tiktok-input').value;
+            const statusDiv = document.getElementById('status');
+            const username = extractUsername(rawInput);
+            
+            if (!username) {
+                statusDiv.style.color = "#fe2c55";
+                statusDiv.innerText = "Vui lòng nhập link tài khoản hoặc Username hợp lệ!";
+                return;
+            }
+
+            statusDiv.style.color = "#161823";
+            statusDiv.innerText = `Đang tìm kiếm tài khoản: @${username}...`;
+
+            try {
+                const response = await fetch(`https://www.tikwm.com/api/user/info?unique_id=${username}`);
+                const result = await response.json();
+
+                if (result.code === 0 && result.data) {
+                    const user = result.data.user;
+                    document.getElementById('user-avatar-img').src = user.avatarLarger; 
+                    document.getElementById('user-username-txt').innerText = `@${user.uniqueId}`;
+                    document.getElementById('user-fullname-txt').innerText = user.nickname || "Không có tên hiển thị";
+                    
+                    currentTargetUser = user.uniqueId; // Lưu lại ID hợp lệ
+                    statusDiv.style.color = "#009b40";
+                    statusDiv.innerText = "Tìm thấy tài khoản thành công!";
+                } else {
+                    statusDiv.style.color = "#fe2c55";
+                    statusDiv.innerText = "Không tìm thấy tài khoản này. Hãy kiểm tra lại link!";
+                }
+            } catch (error) {
+                console.error(error);
+                statusDiv.style.color = "#fe2c55";
+                statusDiv.innerText = "Hệ thống bận, vui lòng thử lại sau.";
+            }
+        });
+
+        // --- LOGIC CHỌN MỆNH GIÁ GÓI XU ---
+        let selectedCoins = 14000;
+        let selectedAmount = 2000000;
+
+        const packages = document.querySelectorAll('.package-card');
+        packages.forEach(pkg => {
+            pkg.addEventListener('click', function() {
+                packages.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+
+                // If this is the custom card, open the custom keypad screen
+                if (this.classList.contains('custom-card')) {
+                    // show keypad/custom screen
+                    showCustomScreen();
+                    // reset keypad
+                    if (window.customKeypad && typeof window.customKeypad.reset === 'function') window.customKeypad.reset();
+                    return;
+                } else {
+                    selectedCoins = parseInt(this.getAttribute('data-coins')) || this.getAttribute('data-coins');
+                    selectedAmount = parseInt(this.getAttribute('data-amount'));
+                }
+            });
+        });
+
+        // --- CUSTOM SCREEN LOGIC ---
+        function showCustomScreen(amount, coins) {
+            // populate values
+            const screen = document.getElementById('custom-screen');
+            if (!screen) return;
+            
+            // Cập nhật thông tin người dùng
+            document.getElementById('custom-username').innerText = document.getElementById('user-username-txt').innerText || '@user';
+            document.getElementById('custom-avatar').src = document.getElementById('user-avatar-img').src || './rc/avatar-default.svg';
+            
+            // Hiển thị giá trị tổng cộng (nếu có)
+            if (amount) {
+                document.getElementById('custom-total').innerText = amount.toLocaleString('vi-VN') + ' ₫';
+            }
+            
+            const payBtn = document.getElementById('custom-pay-btn');
+            if (payBtn) {
+                if (amount) {
+                    payBtn.innerText = 'Thanh toán ngay';
+                    payBtn.classList.add('active');
+                    payBtn.disabled = false;
+                } else {
+                    payBtn.innerText = 'Nạp';
+                    payBtn.classList.remove('active');
+                    payBtn.disabled = true;
+                }
+            }
+
+            // Hiển thị popup tuỳ chỉnh ở giữa màn hình, giữ giao diện chính phía sau
+            document.getElementById('custom-screen').style.display = 'flex';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.body.style.overflow = 'hidden';
+        }
+
+        // back button handler
+        const customBackBtn = document.getElementById('custom-back');
+        if (customBackBtn) {
+            customBackBtn.addEventListener('click', function() {
+                document.getElementById('custom-screen').style.display = 'none';
+                document.body.style.overflow = 'auto';
+                // Reset keypad
+                if (window.customKeypad && typeof window.customKeypad.reset === 'function') {
+                    window.customKeypad.reset();
+                }
+            });
+        }
+
+            // --- KEYPAD & CONVERSION LOGIC FOR CUSTOM SCREEN (coin-first) ---
+        (function(){
+            const VND_PER_COIN = 231; // 1 xu = 231₫ (100 xu = 23,100₫)
+            const MIN_XU = 30;
+            const MAX_XU = 2500000;
+
+            let coinsStr = '';
+            const coinsInputEl = document.getElementById('coins-input');
+            const convertedXuEl = document.getElementById('converted-xu');
+            const totalEl = document.getElementById('custom-total');
+            const payBtn = document.getElementById('custom-pay-btn');
+
+            function sanitizeDigits(value){ return (value||'').toString().replace(/\D/g,''); }
+            function formatVND(n){ return (n||0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' ₫'; }
+            function computeAmountFromXu(coins){ return coins * VND_PER_COIN; }
+
+            window.customKeypad = {
+                reset: function(){ coinsStr = ''; updateUI(); }
+            };
+
+            function updateUI(){
+                const coins = coinsStr ? parseInt(coinsStr,10) : 0;
+                const amount = computeAmountFromXu(coins);
+                coinsInputEl.value = coins ? coins.toLocaleString('vi-VN') : '';
+                convertedXuEl.innerText = (coins?coins.toLocaleString('vi-VN'):'0') + ' Xu';
+                totalEl.innerText = formatVND(amount);
+
+                if (coins < 1 || coins > MAX_XU) {
+                    payBtn.innerText = 'Nạp';
+                    payBtn.classList.remove('active');
+                    payBtn.disabled = true;
+                } else {
+                    payBtn.innerText = 'Thanh toán ngay';
+                    payBtn.classList.add('active');
+                    payBtn.disabled = false;
+                }
+            }
+
+            // keypad buttons operate on coins
+            document.querySelectorAll('#keypad .kp').forEach(btn => {
+                btn.addEventListener('click', function(){
+                    const key = this.getAttribute('data-key');
+                    if (key === 'back') {
+                        coinsStr = coinsStr.slice(0, -1);
+                    } else if (key === '000') {
+                        coinsStr = (coinsStr + '000').replace(/^0+/, '');
+                    } else {
+                        coinsStr = (coinsStr + key).replace(/^0+/, '');
+                    }
+                    updateUI();
+                });
+            });
+
+            // recent chips
+            document.querySelectorAll('.recent-chip').forEach(ch => {
+                ch.addEventListener('click', function(){
+                    const c = parseInt(this.getAttribute('data-coins'),10) || 0;
+                    coinsStr = c.toString();
+                    updateUI();
+                });
+            });
+
+            // allow typing coins directly
+            if (coinsInputEl) {
+                coinsInputEl.addEventListener('input', function(){
+                    coinsStr = sanitizeDigits(this.value);
+                    updateUI();
+                });
+            }
+
+            if (payBtn) payBtn.addEventListener('click', function(){
+                const coins = coinsStr ? parseInt(coinsStr,10) : 0;
+                const amount = computeAmountFromXu(coins);
+                selectedAmount = amount;
+                selectedCoins = coins;
+                document.getElementById('summary-total').innerText = selectedAmount.toLocaleString('vi-VN') + ' ₫';
+                document.getElementById('summary-coins').innerText = selectedCoins + ' Xu';
+                document.getElementById('summary-account').innerText = currentTargetUser ? `@${currentTargetUser}` : 'Chưa có tài khoản';
+                document.getElementById('custom-screen').style.display = 'none';
+                document.body.style.overflow = 'auto';
+                modalPaymentMethod.classList.add('active');
+            });
+
+            updateUI();
+        })();
+
+        // --- LOGIC ĐIỀU KHIỂN ĐÓNG/MỞ POPUPS THANH TOÁN ---
+        const modalPaymentMethod = document.getElementById('modal-payment-method');
+        const modalProcess = document.getElementById('modal-process');
+        let selectedPaymentMethod = 'momo';
+
+        // Bấm Thanh toán ngay ngoài màn hình chính
+        document.getElementById('btn-trigger-payment').addEventListener('click', function() {
+            if (!currentTargetUser) {
+                alert("Vui lòng nhập và bấm 'Kiểm tra tài khoản' TikTok hợp lệ trước khi thực hiện thanh toán!");
+                document.getElementById('tiktok-input').focus();
+                return;
+            }
+            modalPaymentMethod.classList.add('active');
+            document.getElementById('summary-account').innerText = currentTargetUser ? `@${currentTargetUser}` : 'Chưa có tài khoản';
+            document.getElementById('summary-total').innerText = selectedAmount.toLocaleString('vi-VN') + ' ₫';
+            document.getElementById('summary-coins').innerText = selectedCoins + ' Xu';
+            document.getElementById('summary-bank').innerText = selectedBank || 'Chưa chọn';
+        });
+
+        // Đóng các cửa sổ Popup
+        document.getElementById('close-payment-method').addEventListener('click', () => modalPaymentMethod.classList.remove('active'));
+
+        function closeProcessModal() {
+            modalProcess.classList.remove('active');
+            clearInterval(countdownInterval);
+            clearAutoCloseTimer();
+            clearAutoCloseCountdownInterval();
+        }
+
+        // Attach handler to new centered close button if present
+        const btnCloseResultInit = document.getElementById('btn-close-result');
+        if (btnCloseResultInit) btnCloseResultInit.addEventListener('click', closeProcessModal);
+
+        // Toggle chọn phương thức thanh toán trong modal
+        const paymentRows = document.querySelectorAll('.payment-row');
+        let selectedBank = null;
+        const bankButtons = document.querySelectorAll('.bank-btn');
+        const summaryBank = document.getElementById('summary-bank');
+
+        function setSelectedBank(bankName) {
+            selectedBank = bankName;
+            bankButtons.forEach(btn => btn.classList.toggle('selected', btn.getAttribute('data-bank') === bankName));
+            if (summaryBank) summaryBank.innerText = bankName;
+        }
+
+        paymentRows.forEach(row => {
+            row.addEventListener('click', function() {
+                paymentRows.forEach(r => r.classList.remove('active'));
+                this.classList.add('active');
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) radio.checked = true;
+                selectedPaymentMethod = this.getAttribute('data-method');
+            });
+        });
+
+        bankButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.stopPropagation();
+                setSelectedBank(this.getAttribute('data-bank'));
+            });
+        });
+
+        // Smooth-scroll to payment methods when clicking the "Xem các phương thức khác" link
+        const viewOtherMethodsBtn = document.getElementById('view-other-methods');
+        if (viewOtherMethodsBtn) {
+            viewOtherMethodsBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sec = document.querySelector('.payment-list-section');
+                if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // --- LOGIC XỬ LÝ TIẾN TRÌNH THANH TOÁN ---
+        let countdownInterval;
+        let autoCloseTimer;
+        let autoCloseCountdownInterval;
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            clearInterval(countdownInterval);
+            countdownInterval = setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                const hoursText = hours > 0 ? (hours < 10 ? "0" + hours : hours) + ":" : "";
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = hoursText + minutes + ":" + seconds;
+                if (--timer < 0) {
+                    clearInterval(countdownInterval);
+                    display.textContent = "Hết hạn";
+                }
+            }, 1000);
+        }
+
+        function clearAutoCloseTimer() {
+            if (autoCloseTimer) {
+                clearTimeout(autoCloseTimer);
+                autoCloseTimer = null;
+            }
+        }
+
+        function clearAutoCloseCountdownInterval() {
+            if (autoCloseCountdownInterval) {
+                clearInterval(autoCloseCountdownInterval);
+                autoCloseCountdownInterval = null;
+            }
+        }
+
+        function showSuccessResult() {
+            clearInterval(countdownInterval);
+            clearAutoCloseTimer();
+            clearAutoCloseCountdownInterval();
+            document.getElementById('state-loading').style.display = 'none';
+            document.getElementById('state-qr').style.display = 'none';
+            document.getElementById('state-result').style.display = 'block';
+            document.getElementById('process-title').innerText = 'Kết quả giao dịch';
+            const resText = document.getElementById('result-text');
+            resText.style.color = '#009b40';
+            resText.innerText = 'Giao dịch đã hoàn tất. Số xu sẽ được cộng vào tài khoản trong giây lát.';
+            const resultCheck2 = document.getElementById('result-check');
+            if (resultCheck2) resultCheck2.style.display = 'block';
+        }
+
+        document.getElementById('btn-confirm-proceed').addEventListener('click', function() {
+            modalPaymentMethod.classList.remove('active');
+            modalProcess.classList.add('active');
+            document.getElementById('process-title').innerText = "Đang xử lý giao dịch";
+            document.getElementById('state-loading').style.display = 'block';
+            document.getElementById('state-qr').style.display = 'none';
+            document.getElementById('state-result').style.display = 'none';
+
+            setTimeout(() => {
+                document.getElementById('state-loading').style.display = 'none';
+                if (selectedPaymentMethod === 'momo' || selectedPaymentMethod === 'saved') {
+                    document.querySelector('.momo-portal').classList.remove('zalopay');
+                    document.getElementById('process-title').innerText = 'Xác nhận thanh toán MoMo';
+                    document.getElementById('payment-brand-icon').src = './icon/momo.jpg';
+                    document.getElementById('payment-brand-name').innerText = 'Cổng thanh toán MoMo';
+                    document.getElementById('state-qr').style.display = 'block';
+                    document.getElementById('momo-amount').innerText = selectedAmount.toLocaleString('vi-VN') + ' ₫';
+                    document.getElementById('momo-order-id').innerText = 'AgYAA' + Math.random().toString(36).substring(2, 10).toUpperCase();
+                    startTimer(15 * 60, document.getElementById('momo-expiry'));
+                    clearAutoCloseTimer();
+                } else if (selectedPaymentMethod === 'zalopay') {
+                    document.querySelector('.momo-portal').classList.add('zalopay');
+                    document.getElementById('process-title').innerText = 'Xác nhận thanh toán ZaloPay';
+                    document.getElementById('payment-brand-icon').src = './icon/zalopay.png';
+                    document.getElementById('payment-brand-name').innerText = 'Cổng thanh toán ZaloPay';
+                    document.getElementById('state-qr').style.display = 'block';
+                    document.getElementById('momo-amount').innerText = selectedAmount.toLocaleString('vi-VN') + ' ₫';
+                    document.getElementById('momo-order-id').innerText = 'ZP' + Math.random().toString(36).substring(2, 10).toUpperCase();
+                    startTimer(15 * 60, document.getElementById('momo-expiry'));
+                    clearAutoCloseTimer();
+                } else {
+                    document.getElementById('state-result').style.display = 'block';
+                    document.getElementById('process-title').innerText = 'Kết quả giao dịch';
+                    const resText = document.getElementById('result-text');
+                    resText.style.color = '#009b40';
+                    const methodLabel = selectedPaymentMethod === 'zalopay' ? 'ZaloPay' : 'MoMo';
+                    const bankLabel = selectedBank ? `, liên kết với ${selectedBank}` : '';
+                    resText.innerText = `Bạn đã chọn ${methodLabel}${bankLabel}. Giao dịch đang được xử lý, số xu sẽ được cộng vào tài khoản trong giây lát.`;
+                    const resultCheck = document.getElementById('result-check');
+                    if (resultCheck) resultCheck.style.display = 'block';
+                }
+            }, 2500);
+        });
+
+        // Handler for 'Hoàn tất' button on QR screen — show spinner then result
+        const btnQrFinish = document.getElementById('btn-qr-finish');
+        if (btnQrFinish) {
+            btnQrFinish.addEventListener('click', function() {
+                // Stop countdown
+                clearInterval(countdownInterval);
+
+                // Show loading spinner in the process modal
+                document.getElementById('state-qr').style.display = 'none';
+                document.getElementById('state-result').style.display = 'none';
+                document.getElementById('state-loading').style.display = 'block';
+                document.getElementById('process-title').innerText = 'Đang xử lý giao dịch';
+                if (modalProcess) modalProcess.classList.add('active');
+
+                // Keep spinner visible for ~2.5s then show final result
+                setTimeout(() => {
+                    showSuccessResult();
+                }, 2500);
+            });
+        }
+    </script>
+</body>
+</html>

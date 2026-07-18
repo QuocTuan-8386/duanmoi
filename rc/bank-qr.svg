@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Outer frame -->
+  <rect x="2" y="2" width="8" height="8" rx="1"/>
+  <!-- Inner dot top-left -->
+  <rect x="4" y="4" width="4" height="4" rx="0.5" fill="#1a1a1a" stroke="none"/>
+  <!-- Outer frame bottom-left -->
+  <rect x="2" y="14" width="8" height="8" rx="1"/>
+  <!-- Inner dot bottom-left -->
+  <rect x="4" y="16" width="4" height="4" rx="0.5" fill="#1a1a1a" stroke="none"/>
+  <!-- Outer frame top-right -->
+  <rect x="14" y="2" width="8" height="8" rx="1"/>
+  <!-- Inner dot top-right -->
+  <rect x="16" y="4" width="4" height="4" rx="0.5" fill="#1a1a1a" stroke="none"/>
+  <!-- Data module dots -->
+  <rect x="14" y="14" width="2" height="2" rx="0.3" fill="#1a1a1a" stroke="none"/>
+  <rect x="18" y="14" width="2" height="2" rx="0.3" fill="#1a1a1a" stroke="none"/>
+  <rect x="14" y="18" width="2" height="2" rx="0.3" fill="#1a1a1a" stroke="none"/>
+  <rect x="20" y="18" width="2" height="2" rx="0.3" fill="#1a1a1a" stroke="none"/>
+  <rect x="18" y="20" width="2" height="2" rx="0.3" fill="#1a1a1a" stroke="none"/>
+  <rect x="20" y="14" width="2" height="2" rx="0.3" fill="#1a1a1a" stroke="none"/>
+</svg>
