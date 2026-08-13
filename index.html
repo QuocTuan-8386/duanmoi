@@ -1197,27 +1197,45 @@
             statusDiv.innerText = `Đang tìm kiếm tài khoản: @${username}...`;
 
             try {
-                const response = await fetch(`https://www.tikwm.com/api/user/info?unique_id=${username}`);
-                const result = await response.json();
-
-                if (result.code === 0 && result.data) {
-                    const user = result.data.user;
-                    document.getElementById('user-avatar-img').src = user.avatarLarger; 
-                    document.getElementById('user-username-txt').innerText = `@${user.uniqueId}`;
-                    document.getElementById('user-fullname-txt').innerText = user.nickname || "Không có tên hiển thị";
-                    
-                    currentTargetUser = user.uniqueId; // Lưu lại ID hợp lệ
-                    statusDiv.style.color = "#009b40";
-                    statusDiv.innerText = "Tìm thấy tài khoản thành công!";
-                } else {
-                    statusDiv.style.color = "#fe2c55";
-                    statusDiv.innerText = "Không tìm thấy tài khoản này. Hãy kiểm tra lại link!";
-                }
-            } catch (error) {
-                console.error(error);
-                statusDiv.style.color = "#fe2c55";
-                statusDiv.innerText = "Hệ thống bận, vui lòng thử lại sau.";
+    const response = await fetch(
+        `https://api.lamatok.com/v1/user/by/username?username=${encodeURIComponent(username)}`,
+        {
+            method: "GET",
+            headers: {
+                "accept": "application/json",
+                "x-access-key": "gh2vskhsznggyofa1soimk6btnd66gk5"
             }
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error("Không tìm thấy tài khoản.");
+    }
+
+    const data = await response.json();
+
+    // Điều chỉnh các trường dưới đây theo đúng cấu trúc JSON mà LamaTok trả về
+    const user = data.user || data.data || data;
+
+    document.getElementById("user-avatar-img").src =
+        user.avatar || user.avatar_url || "";
+
+    document.getElementById("user-username-txt").innerText =
+        "@" + (user.unique_id || user.username || username);
+
+    document.getElementById("user-fullname-txt").innerText =
+        user.nickname || user.display_name || "";
+
+    currentTargetUser = user.unique_id || user.username || username;
+
+    statusDiv.style.color = "#009b40";
+    statusDiv.innerText = "Tìm thấy tài khoản thành công!";
+
+} catch (error) {
+    currentTargetUser = null;
+    statusDiv.style.color = "#fe2c55";
+    statusDiv.innerText = "Không tìm thấy tài khoản hoặc API không khả dụng.";
+}
         });
 
         // --- LOGIC CHỌN MỆNH GIÁ GÓI XU ---
